@@ -6,22 +6,37 @@ import {
   TouchableOpacity,
   Image,
   Modal,
+  TextInput,
 } from 'react-native';
 import settings from '../images/settings.png';
 import headbar from '../images/headbar.png';
 import select from '../images/select.png';
-import unselect from '../images/unselect.png'
+import unselect from '../images/unselect.png';
+import check from '../images/check.png';
+import uncheck from '../images/uncheck.png';
 class FilterBtn extends Component {
   state = {
     isVisible: false,
     isVisibleSecond: false,
     isVisibleThird: false,
+    isVisiblefour: false,
+    isVisiblefive: false,
+    isVisiblesix: false,
   };
   displayModal(show) {
     this.setState({isVisibleSecond: show});
-  };
+  }
   displayModalTwo(show) {
     this.setState({isVisibleThird: show});
+  }
+  displayModalThree(show) {
+    this.setState({isVisiblefour: show});
+  }
+  displayModalThree(show) {
+    this.setState({isVisiblefive: show});
+  }
+  displayModalThree(show) {
+    this.setState({isVisiblesix: show});
   }
   render() {
     return (
@@ -48,8 +63,7 @@ class FilterBtn extends Component {
           animationType={'fade'}
           transparent={true}>
           <View style={styles.Modalcontainer}>
-            <View
-              style={styles.mainView}>
+            <View style={styles.mainView}>
               <View
                 style={{
                   paddingVertical: 20,
@@ -66,9 +80,9 @@ class FilterBtn extends Component {
               </View>
               <View style={{paddingVertical: 40, padding: 20}}>
                 <View style={styles.textView}>
-                <TouchableOpacity
-                    onPress={() => this.setState({isVisibleThird: true})}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Mall</Text>
+                  <TouchableOpacity
+                    onPress={() => this.setState({isVisiblefour: true})}>
+                    <Text style={{fontSize: 16, fontWeight: 'bold'}}>Mall</Text>
                   </TouchableOpacity>
                   <Text
                     style={{color: '#5D6167', fontSize: 14, fontWeight: '900'}}>
@@ -76,11 +90,11 @@ class FilterBtn extends Component {
                   </Text>
                 </View>
                 <View style={styles.textView}>
-                <TouchableOpacity
-                    onPress={() => this.setState({isVisibleThird: true})}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Store category
-                  </Text>
+                  <TouchableOpacity
+                    onPress={() => this.setState({isVisiblefive: true})}>
+                    <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                      Store category
+                    </Text>
                   </TouchableOpacity>
                   <Text
                     style={{color: '#5D6167', fontSize: 14, fontWeight: '900'}}>
@@ -88,11 +102,11 @@ class FilterBtn extends Component {
                   </Text>
                 </View>
                 <View style={styles.textView}>
-                <TouchableOpacity
-                    onPress={() => this.setState({isVisibleSecond: true})}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Brand name
-                  </Text>
+                  <TouchableOpacity
+                    onPress={() => this.setState({isVisiblesix: true})}>
+                    <Text style={{fontSize: 16, fontWeight: 'bold'}}>
+                      Brand name
+                    </Text>
                   </TouchableOpacity>
                   <Text
                     style={{color: '#5D6167', fontSize: 14, fontWeight: '900'}}>
@@ -155,11 +169,10 @@ class FilterBtn extends Component {
         </Modal>
         <Modal
           visible={this.state.isVisibleSecond}
-          animationType={'fade'}
+          animationType={'slide'}
           transparent={true}>
           <View style={styles.Modalcontainer}>
-            <View
-              style={styles.mainView}>
+            <View style={styles.mainView}>
               <View
                 style={{
                   paddingVertical: 20,
@@ -172,11 +185,12 @@ class FilterBtn extends Component {
                   justifyContent: 'space-around',
                   alignItems: 'center',
                 }}>
-                  <TouchableOpacity onPress={()=>this.setState({isVisibleSecond:false})}>
-                <Text style={{color:'#03A587', fontSize:14}}>Cancel</Text>
+                <TouchableOpacity
+                  onPress={() => this.setState({isVisibleSecond: false})}>
+                  <Text style={{color: '#03A587', fontSize: 14}}>Cancel</Text>
                 </TouchableOpacity>
-                <Text style={{fontWeight:'bold', fontSize:16}}>Sort By</Text>
-                <Text style={{color:'#03A587', fontSize:14}}>Done</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Sort By</Text>
+                <Text style={{color: '#03A587', fontSize: 14}}>Done</Text>
               </View>
               <View style={{paddingVertical: 40, padding: 20}}>
                 <View style={styles.textView2}>
@@ -184,29 +198,23 @@ class FilterBtn extends Component {
                   <Image source={select} />
                 </View>
                 <View style={styles.textView2}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    A - Z
-                  </Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>A - Z</Text>
                   <Image source={unselect} />
                 </View>
                 <View style={styles.textView2}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Z - A
-                  </Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Z - A</Text>
                   <Image source={unselect} />
                 </View>
-                
               </View>
             </View>
           </View>
         </Modal>
         <Modal
           visible={this.state.isVisibleThird}
-          animationType={'fade'}
+          animationType={'slide'}
           transparent={true}>
           <View style={styles.Modalcontainer}>
-            <View
-              style={styles.mainView}>
+            <View style={styles.mainView}>
               <View
                 style={{
                   paddingVertical: 20,
@@ -219,11 +227,12 @@ class FilterBtn extends Component {
                   justifyContent: 'space-around',
                   alignItems: 'center',
                 }}>
-                  <TouchableOpacity onPress={()=>this.setState({isVisibleThird:false})}>
-                <Text style={{color:'#03A587', fontSize:14}}>Cancel</Text>
+                <TouchableOpacity
+                  onPress={() => this.setState({isVisibleThird: false})}>
+                  <Text style={{color: '#03A587', fontSize: 14}}>Cancel</Text>
                 </TouchableOpacity>
-                <Text style={{fontWeight:'bold', fontSize:16}}>Sort By</Text>
-                <Text style={{color:'#03A587', fontSize:14}}>Done</Text>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Sort By</Text>
+                <Text style={{color: '#03A587', fontSize: 14}}>Done</Text>
               </View>
               <View style={{paddingVertical: 40, padding: 20}}>
                 <View style={styles.textView2}>
@@ -231,18 +240,161 @@ class FilterBtn extends Component {
                   <Image source={select} />
                 </View>
                 <View style={styles.textView2}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    A - Z
-                  </Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>A - Z</Text>
                   <Image source={unselect} />
                 </View>
                 <View style={styles.textView2}>
-                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>
-                    Z - A
-                  </Text>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Z - A</Text>
                   <Image source={unselect} />
                 </View>
-                
+              </View>
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          visible={this.state.isVisiblefour}
+          animationType={'slide'}
+          transparent={true}>
+          <View style={styles.Modalcontainer}>
+            <View style={styles.mainView}>
+              <View
+                style={{
+                  paddingVertical: 20,
+                  borderBottomWidth: 0.5,
+                  width: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 20,
+                  flexDirection: 'row',
+                  justifyContent: 'space-around',
+                  alignItems: 'center',
+                }}>
+                <TouchableOpacity
+                  onPress={() => this.setState({isVisiblefour: false})}>
+                  <Text style={{color: '#03A587', fontSize: 14}}>Cancel</Text>
+                </TouchableOpacity>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Malls</Text>
+                <Text style={{color: '#03A587', fontSize: 14}}>Done</Text>
+              </View>
+              <View style={{paddingVertical: 40, padding: 20}}>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Elante</Text>
+                  <Image source={select} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>DLF</Text>
+                  <Image source={unselect} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>TDI</Text>
+                  <Image source={unselect} />
+                </View>
+              </View>
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          visible={this.state.isVisiblesix}
+          animationType={'slide'}
+          transparent={true}>
+          <View style={styles.Modalcontainer}>
+            <View style={styles.mainView}>
+              <View
+                style={{
+                  paddingVertical: 20,
+                  borderBottomWidth: 0.5,
+                  width: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 20,
+                  flexDirection: 'row',
+                  justifyContent: 'space-around',
+                  alignItems: 'center',
+                }}>
+                <TouchableOpacity
+                  onPress={() => this.setState({isVisiblesix: false})}>
+                  <Text style={{color: '#03A587', fontSize: 14}}>Cancel</Text>
+                </TouchableOpacity>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Category</Text>
+                <Text style={{color: '#03A587', fontSize: 14}}>Done</Text>
+              </View>
+              <View style={{paddingVertical: 40, padding: 20}}>
+                <View style={{backgroundColor:'#F5F6F7',borderRadius:40,paddingHorizontal:10}}>
+                <TextInput placeholder="Search" placeholderTextColor="#5D6167" />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Puma</Text>
+                  <Image source={uncheck} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Nike</Text>
+                  <Image source={check} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Addidas</Text>
+                  <Image source={uncheck} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>levis</Text>
+                  <Image source={uncheck} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Zara</Text>
+                  <Image source={check} />
+                </View>
+              </View>
+            </View>
+          </View>
+        </Modal>
+        <Modal
+          visible={this.state.isVisiblefive}
+          animationType={'slide'}
+          transparent={true}>
+          <View style={styles.Modalcontainer}>
+            <View style={styles.mainView}>
+              <View
+                style={{
+                  paddingVertical: 20,
+                  borderBottomWidth: 0.5,
+                  width: '100%',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 20,
+                  flexDirection: 'row',
+                  justifyContent: 'space-around',
+                  alignItems: 'center',
+                }}>
+                <TouchableOpacity
+                  onPress={() => this.setState({isVisiblefive: false})}>
+                  <Text style={{color: '#03A587', fontSize: 14}}>Cancel</Text>
+                </TouchableOpacity>
+                <Text style={{fontWeight: 'bold', fontSize: 16}}>Category</Text>
+                <Text style={{color: '#03A587', fontSize: 14}}>Done</Text>
+              </View>
+              <View style={{paddingVertical: 40, padding: 20}}>
+                <View style={{backgroundColor:'#F5F6F7',borderRadius:40,paddingHorizontal:10}}>
+                <TextInput placeholder="Search" placeholderTextColor="#5D6167" />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Arts, Crafts, & Sewing</Text>
+                  <Image source={uncheck} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Automotive Parts & Accessories</Text>
+                  <Image source={check} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Baby</Text>
+                  <Image source={uncheck} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Beauty & Personal Care</Text>
+                  <Image source={uncheck} />
+                </View>
+                <View style={styles.textView2}>
+                  <Text style={{fontSize: 16, fontWeight: 'bold'}}>Cell Phones & Accessories</Text>
+                  <Image source={check} />
+                </View>
               </View>
             </View>
           </View>
@@ -270,7 +422,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000aa',
     height: 1170,
     justifyContent: 'center',
-    paddingTop: ( Platform.OS === 'ios' ) ? 20 : 0
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,
   },
   textView: {
     borderBottomWidth: 0.5,
@@ -279,7 +431,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   textView2: {
-    
     padding: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -287,14 +438,14 @@ const styles = StyleSheet.create({
   footer: {
     justifyContent: 'center',
     flexDirection: 'row',
-    height:100,
+    height: 100,
     alignItems: 'center',
-  
-    justifyContent: 'center', 
-      alignItems: 'center',
-      position: 'relative',
-      bottom: -180,
-      width: '100%', 
+
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    bottom: -180,
+    width: '100%',
   },
   btn: {
     justifyContent: 'center',
@@ -312,12 +463,12 @@ const styles = StyleSheet.create({
     height: 48,
     borderColor: '#03A587',
   },
-  mainView:{
+  mainView: {
     backgroundColor: 'white',
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    height:'70%'
-  }
+    height: '70%',
+  },
 });
 
 export default FilterBtn;

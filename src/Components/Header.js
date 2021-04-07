@@ -37,7 +37,6 @@ class Header extends Component {
             <Image source={search} />
           </TouchableOpacity>
         </View>
-
         <Modal
           animationType={'slide'}
           transparent={false}
